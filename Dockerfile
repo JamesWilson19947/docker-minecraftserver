@@ -4,7 +4,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 MAINTAINER Daniel Wiltshire
 
-ADD https://papermc.io/api/v1/paper/1.15.1/latest/download /opt/minecraft/paperclip.jar
+ENV MINECRAFT_VERSION 1.15.1
+
+ADD https://papermc.io/api/v1/paper/${MINECRAFT_VERSION}/latest/download /opt/minecraft/paperclip.jar
 
 RUN apt-get update && apt-get install --no-install-recommends --yes openjdk-11-jre-headless
 
